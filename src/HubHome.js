@@ -8,6 +8,10 @@ class HubHome extends Component {
     render(){
       return(
         <div className="hubhome">
+
+
+          {/* title, text and button */}
+          <div className="hubhomeanimate">
           <div className="hubtitle">
               Any Tips?
           </div>
@@ -26,6 +30,12 @@ class HubHome extends Component {
             </div>
             </Link>
             </div>
+            </div>
+
+            {/* image */}
+            <div className="thehubimage">
+            </div>
+
 
         </div>
       )

@@ -3,6 +3,7 @@ import './App.css';
 
 import { Link } from 'react-router-dom';
 
+
 class Header extends Component{
 
 
@@ -24,7 +25,8 @@ render(){
            </div>
            <LinkTo check={urlCheck} name="Why apply?" link="/why-apply"/>
            <LinkTo check={urlCheck} name="How do I apply?" link="/how-to-apply"/>
-           <LinkTo check={urlCheck} name="The Hub" link="/the-hub"/>
+            <Link to="/the-hub"><div className="thehubheader header-div"></div></Link>
+           {/* <LinkTo check={urlCheck} name="The Hub" link="/the-hub"/> */}
         </div>
     )
 }
