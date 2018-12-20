@@ -1,0 +1,11 @@
+ -- Installation
+
+ Install npm.
+ Run `npm install` in the root directory of the repository.
+
+ Old versions of node may break installation; do not use versions of Ubuntu older than 16.04.
+ Installation also requires a lot of memory - recommended > 2GB of memory.
+
+ -- Running
+ 
+ Run `npm start` in the root directory of the repository.
