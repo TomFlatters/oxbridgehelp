@@ -390,7 +390,7 @@ animation: slidein1 0.8s ease-out;
   justify-content: center;
 }
 
-.hubsearchposition {
+.hubsearchposition{
   width: 36vw;
   height: 51vh;
   margin-left: 30vw;
@@ -404,10 +404,53 @@ animation: slidein1 0.8s ease-out;
   animation: slidein2 1.1s ease-out;
 }
 
+.hubsearchbar{
+  background: white;
+  color: black;
+  margin-top: 1vh;
+  padding: 0.5vh 1vw 0 1vw;
+}
+
 .hub{
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+}
+
+.unichoice{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.unichoiceoption{
+  margin: 1vh 1vw;
+  background: #FF928B;
+  cursor: pointer;
+  padding: 0.5vh 0.5vw;
+}
+.unichoiceoption:hover{
+  background: white;
+  color: #FF928B;
+}
+
+.searchinfo{
+  font-size: 0.8em;
+  color: white;
+  background: #FF928B;
+  cursor: pointer;
+  padding: 0.5vh 0.5vw;
+  margin-top: 1vh;
+}
+.searchinfo:hover{
+  color: #FF928B;
+  background: white;
+}
+
+.searchbar{
+  color: black;
+  font-size: 0.8em;
 }
 
 /* animations */
