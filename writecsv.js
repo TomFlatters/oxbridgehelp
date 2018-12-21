@@ -18,7 +18,10 @@ function writeData(reference, object){
 	database.ref(reference).set(object);
 }
 
-csvtojson().fromFile("Data/OHDummyData_CourseAdvice.csv").then((jsonObj) => {
-	writeData("/CourseAdvice", jsonObj);
-});
+var files = "CourseAdvice\nCourseLink\nGeneralResources\nInterviews\nSubjectResources\nTestAdvice\nTestResources".split("\n");
+for(const file of files){
+	csvtojson().fromFile("Data/"+file+".csv").then((jsonObj) => {
+		writeData("/"+file, jsonObj);
+	});
+}
 
