@@ -25,7 +25,7 @@ render(){
            </div>
            <LinkTo check={urlCheck} name="Why apply?" link="/why-apply"/>
            <LinkTo check={urlCheck} name="How do I apply?" link="/how-to-apply"/>
-            <Link to="/the-hub"><div className="thehubheader header-div"></div></Link>
+            <Link to="/the-hub"><div className="thehubheader header-div" alt="TheHub"></div></Link>
            {/* <LinkTo check={urlCheck} name="The Hub" link="/the-hub"/> */}
         </div>
     )

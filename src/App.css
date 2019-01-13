@@ -118,9 +118,102 @@ text-align: center;
   font-weight: 600;
 }
 
-.row{
+.hubrow{
+  top: 9vh;
+  position: fixed;
   display: flex;
-  margin-left: 5vw;
+  padding-left: 2vw;
+  height: 8vh;
+  align-items: center;
+  border: 0.2vw solid black;
+  border-left: 0;
+  border-right: 0;
+  width: 96vw;
+  padding-right: 2vw;
+  background: white;
+  opacity: 0.85;
+}
+
+.hubrowspaced{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  margin-top: 2vh;
+  font-family: 'Karla', sans-serif;
+}
+
+.hublinkbox{
+  width: 16vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.2vw solid black;
+  color: black;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: 'Karla', sans-serif;
+
+}
+.hublinkbox:hover{
+ cursor:pointer;
+ background: #7DC95E;
+ border-color: #7DC95E;
+}
+
+.scrollablehub{
+  margin-top: 25vh;
+  min-height: 150vh;
+  overflow-x: hidden;
+}
+
+.hubinfobox{
+  margin-top: 5vh;
+  width: 88vw;
+  display: flex;
+  flex-direction: column;
+  border: 0.2vw solid black;
+  color: black;
+  min-height: 10vh;
+  height: auto;
+  font-size: 2em;
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+  padding: 1vh 1vw;
+}
+/* .hubinfoboxopen{
+  margin-top: 5vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  border: 0.2vw solid black;
+  color: black;
+  height: auto;
+} */
+
+.linktocourse{
+  margin-left: auto;
+}
+
+.collapsiblerow{
+  background: white;
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 2vh;
+  font-size: 0.75em;
+  font-family: 'Montserrat',sans-serif;
+  min-height: 30vh;
+}
+
+.displaydata{
+  width: 70%;
+  border-right: 0.2vw solid black;
+}
+.datanav{
+  width: 28%;
+  padding-left: 2%;
 }
 
 .rowflex {
@@ -492,6 +585,14 @@ animation: slidein1 0.8s ease-out;
   }
 }
 
+/* @keyframes collapsibleshow {
+  from {
+height: auto  }
+  to {
+    height: auto;
+  }
+} */
+
 @keyframes hubfade {
   from {
     opacity: 0.35;
@@ -549,4 +650,10 @@ iframe {
 
 a {
   text-decoration: none !important;
+}
+
+/* collapsible */
+
+.Collapsible__trigger:is-open{
+  background: black;
 }
