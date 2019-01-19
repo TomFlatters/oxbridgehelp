@@ -119,41 +119,49 @@ text-align: center;
 }
 
 .hubrow{
-  top: 9vh;
-  position: fixed;
   display: flex;
-  padding-left: 2vw;
-  height: 8vh;
-  align-items: center;
-  border: 0.2vw solid black;
-  border-left: 0;
-  border-right: 0;
-  width: 96vw;
-  padding-right: 2vw;
+  flex-direction: column;
+  margin-left: 2vw;
+  padding-left: 1vw;
+  border-left: 0.5vw solid black;
+  justify-content: left;
+  width: 96.5vw;
   background: white;
-  opacity: 0.85;
+  opacity: 1;
+  margin-bottom: 3vh;
 }
 
 .hubrowspaced{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100vw;
-  margin-top: 2vh;
   font-family: 'Karla', sans-serif;
+  padding-top: 3vh;
+}
+
+.hubinfospaced{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  font-family: 'Karla', sans-serif;
+  padding-top: 10vh;
 }
 
 .hublinkbox{
+  cursor: pointer;
   width: 16vw;
   height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.2vw solid black;
+  background: #7CDF64;
   color: black;
   font-size: 1.5em;
   font-weight: 600;
   font-family: 'Karla', sans-serif;
+  margin-left: 2vw;
 
 }
 .hublinkbox:hover{
@@ -169,11 +177,15 @@ text-align: center;
 }
 
 .hubinfobox{
+  cursor:pointer;
   margin-top: 5vh;
   width: 88vw;
   display: flex;
   flex-direction: column;
-  border: 0.2vw solid black;
+  /* border-left: 0.5vw solid black;
+  border-right: 0.5vw solid black;
+background: #7CDF64; */
+ border: 0.5vw solid black;
   color: black;
   min-height: 10vh;
   height: auto;
@@ -191,10 +203,6 @@ text-align: center;
   color: black;
   height: auto;
 } */
-
-.linktocourse{
-  margin-left: auto;
-}
 
 .collapsiblerow{
   background: white;
@@ -555,15 +563,30 @@ animation: slidein1 0.8s ease-out;
 }
 
 .hubcoursepage{
-  margin-top: 9vh;
+  margin-top: 17.5vh;
 }
 
+.hubcoursesubtitle{
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+  font-size: 1.6em;
+  margin: 0;
+  padding: 0;
+}
 .hubcoursetitle{
   font-family: 'Karla', sans-serif;
   font-weight: 600;
   font-size: 2em;
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
+.linktocourse{
+  padding: 0;
+  padding-top: 1vh;
+  margin: 0;
+  font-size: 1.2em;
+}
+
 
 /* animations */
 

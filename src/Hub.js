@@ -4,9 +4,49 @@ import Select from 'react-select';
 import Home from './Home'
 import {oXoptions, Camoptions} from './courselist.js'
 
+import * as firebase from 'firebase'
+
 import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 
 class Hub extends Component {
+
+  componentDidUpdate(){
+
+    const database = firebase.database();
+
+    function writeData(reference, object){
+      database.ref(reference).set(object);
+    }
+    
+    function readData(reference){
+      return database.ref(reference).once("value").then(function(snapshot){return snapshot.val();});
+    }
+    
+    function writeUserData(userId, name, password, hair) {
+      writeData('users/'+userId, {name: name, password: password, hair_colour: hair});
+    }
+    
+    function readUserData(userId){
+      return readData('users/'+userId);
+    }
+    
+    // Examples:
+    
+    // writeUserData(1, "ben", "verysecretpassword", false)
+    // > undefined
+    
+    // echoPromise(readUserData(1))
+    // > undefined
+    // > {hair_colour: false, name: "ben", password: "verysecretpassword"}
+    
+    function echoPromise(promise){
+      promise.then(function(value){console.log(value);});
+    }
+
+  console.log("'ere's ya data:")
+  console.log(echoPromise(readData('/' + this.state.course)));
+}
+
  
 constructor(){
   super()
@@ -98,6 +138,8 @@ class SearchCourses extends Component {
   }
   }
 
+
+ 
   handleChange = (selectedOption) => {
     this.setState({ selectedOption });
     console.log(`Option selected:`, selectedOption);
