@@ -9,3 +9,8 @@
  -- Running
  
  Run `npm start` in the root directory of the repository.
+
+ -- Pulling
+
+ When updating the repo, be aware that more dependencies may now be requisite; as such, the project will need `npm install` to be run before another start.
+
