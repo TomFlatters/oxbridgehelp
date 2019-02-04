@@ -8,46 +8,35 @@ import * as firebase from 'firebase'
 
 import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 
-class Hub extends Component {
-
-  componentDidUpdate(){
-
-    const database = firebase.database();
-
-    function writeData(reference, object){
-      database.ref(reference).set(object);
-    }
-    
-    function readData(reference){
-      return database.ref(reference).once("value").then(function(snapshot){return snapshot.val();});
-    }
-    
-    function writeUserData(userId, name, password, hair) {
-      writeData('users/'+userId, {name: name, password: password, hair_colour: hair});
-    }
-    
-    function readUserData(userId){
-      return readData('users/'+userId);
-    }
-    
-    // Examples:
-    
-    // writeUserData(1, "ben", "verysecretpassword", false)
-    // > undefined
-    
-    // echoPromise(readUserData(1))
-    // > undefined
-    // > {hair_colour: false, name: "ben", password: "verysecretpassword"}
-    
-    function echoPromise(promise){
-      promise.then(function(value){console.log(value);});
-    }
-
-  console.log("'ere's ya data:")
-  console.log(echoPromise(readData('/' + this.state.course)));
+var config = {
+  apiKey: "AIzaSyAfnaiLlHra8674f4YJcSpjv46WbA8_oLE",
+  authDomain: "test-586a7.firebaseapp.com",
+  databaseURL: "https://test-586a7.firebaseio.com",
+  projectId: "test-586a7",
+  storageBucket: "",
+  messagingSenderId: "227370208626"
+};
+if(firebase.apps.length < 1) {
+  firebase.initializeApp(config);
 }
 
- 
+const database = firebase.database();
+
+function writeData(reference, object){
+  database.ref(reference).set(object);
+}
+
+function readData(reference){
+  return database.ref(reference).once("value").then(function(snapshot){return snapshot.val();});
+}
+
+class Hub extends Component {
+
+componentDidUpdate(){
+
+}
+
+
 constructor(){
   super()
   this.state = {
@@ -133,9 +122,11 @@ class SearchCourses extends Component {
 
   constructor(){
     super()
+    
     this.state={
-    selectedOption: "",
-  }
+      selectedOption: "",
+    }
+    
   }
 
 
@@ -146,18 +137,29 @@ class SearchCourses extends Component {
   }
 
   chooseoptions = (props) => {
-    if(this.props.uni === "Oxford"){
-    return oXoptions;
-  } else {
-   return Camoptions;
+    return this.state.courses;
   }
-}
 
   render(){
+    var uni = this.props.uni
+    readData("Uni/"+uni+"/Course").then(function(courses){
+      var course_list = []
+      for(var course in courses) course_list.push(course)
+      
+      console.log("Course list is:")
+      console.log(course_list);
+      
+      this.setState={
+        selectedOption: this.state.selectedOption,
+        courses: course_list
+      }
+    })
+    
     const { selectedOption } = this.state;
     const optionUrl = "/the-hub/" + this.props.uni + "/" + selectedOption.value;
     console.log(selectedOption.value)
     console.log(optionUrl)
+    console.log(this.state.courses)
     return(
       <div>
         Find courses and subjects at {this.props.uni}:
