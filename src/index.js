@@ -15,8 +15,8 @@ var config = {
     storageBucket: "",
     messagingSenderId: "227370208626"
   };
-  firebase.initializeApp(config);
-  
+if(firebase.apps.length < 1) firebase.initializeApp(config);
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
