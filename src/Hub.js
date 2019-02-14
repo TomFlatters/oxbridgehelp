@@ -40,11 +40,11 @@ class Hub extends Component {
     // > {hair_colour: false, name: "ben", password: "verysecretpassword"}
     
     function echoPromise(promise){
-      promise.then(function(value){console.log(value);});
+      promise.then(function(value){console.log("hi");console.log(value);});
     }
 
-  console.log("'ere's ya data:")
-  console.log(echoPromise(readData('/' + this.state.course)));
+  console.log("here's ya data:")
+  echoPromise(readData("Uni"));
 }
 
  
