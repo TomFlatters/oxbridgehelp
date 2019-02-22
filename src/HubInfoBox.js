@@ -6,6 +6,7 @@ import Collapsible from 'react-collapsible';
 class HubInfoBox extends Component {
 
     render(){
+      console.log("Data for collapsible:"+ this.props.data[1])
       return(
           <div>
         
@@ -13,10 +14,10 @@ class HubInfoBox extends Component {
 
       <div className="collapsiblerow">
         <div className="displaydata">
-            display data here
         </div>
         <div className="datanav">
-            navigation here
+          
+
         </div>
       </div>
        

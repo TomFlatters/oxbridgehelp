@@ -6,7 +6,6 @@ import { Route, BrowserRouter as Router} from 'react-router-dom';
 import Hub from './Hub'
 import Home from './Home'
 // import Sites from './Sites'
-import About from './About'
 import Header from './Header'
 import HubCoursePage from './HubCoursePage'
 
@@ -26,7 +25,6 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/the-hub" component={Hub} />
             {/* <Route path="/sites" component={Sites} /> */}
-            <Route path="/about" component={About} />
 
             {oXoptions.map((value) => {  
               var url = "/the-hub/" + "Oxford/" + value.value   
