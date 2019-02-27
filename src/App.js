@@ -8,6 +8,7 @@ import Home from './Home'
 // import Sites from './Sites'
 import Header from './Header'
 import HubCoursePage from './HubCoursePage'
+import Footer from './Footer'
 
 import {oXoptions, Camoptions} from './courselist'
 
@@ -41,9 +42,8 @@ class App extends Component {
               <HubCoursePage uni="Cambridge" value={value.value} name={value.label}/>
               )} />) 
             })}
-
+          <Footer/>
         </div>
-
      </div>
 
     </Router>

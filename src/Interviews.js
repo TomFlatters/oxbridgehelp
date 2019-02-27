@@ -3,14 +3,14 @@ import './App.css';
 
 import Collapsible from 'react-collapsible';
 
-class HubInfoBox extends Component {
+class Interviews extends Component {
 
     render(){
-      console.log("Data for collapsible:"+ this.props.data[1])
+      console.log("Interviews data for collapsible:"+ this.props.data)
       return(
           <div>
         
-      <Collapsible className="hubinfobox" openedClassName="hubinfobox" trigger={this.props.url}>
+      <Collapsible className="hubinfobox" closedClassName="hubinfobox" openedClassName="hubinfobox" trigger={this.props.url} triggerClassName="fullheight"triggerOpenedClassName="fullheight">
 
       <div className="collapsiblerow">
         <div className="displaydata">
@@ -28,4 +28,4 @@ class HubInfoBox extends Component {
     }
   }
 
-export default HubInfoBox
+export default Interviews

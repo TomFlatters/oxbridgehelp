@@ -176,16 +176,17 @@ text-align: center;
   overflow-x: hidden;
 }
 
+.hubinfo{
+  margin-bottom: 10vh;
+}
+
 .hubinfobox{
   cursor:pointer;
-  margin-top: 5vh;
+  margin-top: 1vh;
   width: 88vw;
   display: flex;
   flex-direction: column;
-  /* border-left: 0.5vw solid black;
-  border-right: 0.5vw solid black;
-background: #7CDF64; */
- border: 0.5vw solid black;
+ border: 0.2vw solid black;
   color: black;
   min-height: 10vh;
   height: auto;
@@ -194,15 +195,6 @@ background: #7CDF64; */
   font-weight: 600;
   padding: 1vh 1vw;
 }
-/* .hubinfoboxopen{
-  margin-top: 5vh;
-  width: 90vw;
-  display: flex;
-  flex-direction: column;
-  border: 0.2vw solid black;
-  color: black;
-  height: auto;
-} */
 
 .collapsiblerow{
   background: white;
@@ -213,6 +205,10 @@ background: #7CDF64; */
   font-size: 0.75em;
   font-family: 'Montserrat',sans-serif;
   min-height: 30vh;
+}
+
+.fullheight{
+  min-height: 10vh;
 }
 
 .displaydata{
@@ -679,4 +675,25 @@ a {
 
 .Collapsible__trigger:is-open{
   background: black;
+}
+
+.footer{
+  max-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  min-height: 25vh;
+  background-color: #464646;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+.footercol{
+  width: 18.3333vw;
+  padding: 0 7.5vw;
+  text-align: left;
+  margin-top: 2vh;
+}
+.footerlink{
+  cursor:pointer;
+  list-style-type: none;
+  padding: 1vh 0
 }

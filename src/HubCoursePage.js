@@ -4,7 +4,11 @@ import './App.css';
 import {Link} from 'react-router-dom';
 
 import HubLinkBox from './HubLinkBox';
-import HubInfoBox from './HubInfoBox';
+import AdmissionsTests from './AdmissionsTests';
+import RelatedSubjects from './RelatedSubjects';
+import CourseAdvice from './CourseAdvice';
+import Interviews from './Interviews';
+
 
 import firebase from 'firebase';
 
@@ -34,21 +38,26 @@ class HubCoursePage extends Component {
       }
       function echoPromise(promise){
         promise.then(function(value){console.log("hi");console.log(value);});
-      }
+            }   
       readData("Uni/"+this.props.uni+"/Course/"+this.props.name)
         .then((dataSnapshot) => {
-            this.setState({
+          var advice = []
+          for (var i in dataSnapshot["CourseAdvice"]){
+            advice.push(dataSnapshot["CourseAdvice"][i].text)
+          }
+          console.log("!!!COURSE ADVICE: ")
+          console.log(advice)
+            this.setState({ 
               data: dataSnapshot,
               related: dataSnapshot["RelatedSubjects"],
               interviews: dataSnapshot["Interviews"],
-              advice: dataSnapshot["CourseAdvice"]
+              advice: advice
             });
          });
   }
 
     render(){      
       const sections = [[["Admissions Tests", "some tests"], ["Related Subjects", this.state.related]], [["Course Advice",this.state.advice], ["Interviews",this.state.interviews]]];
-      // for (var i in this.state.data) sections.push(this.state.data[i]);
       console.log(this.state)
       return(
         <div className="hubcoursepage fixscroll">
@@ -77,24 +86,21 @@ class HubCoursePage extends Component {
                 return (<HubLinkBox url={url}/> )})}
         </div>
 
-
-         {sections[0].map((value) => { 
-               return (
+      <div className="hubinfo">
+        <div className="hubinfospaced">
+         <AdmissionsTests data={sections[0][0][1]} url={sections[0][0][0]}/>
+         </div> 
          <div className="hubinfospaced">
-         <HubInfoBox data={value} url={value[0]}/>
+         <RelatedSubjects data={this.state.related} url={sections[0][1][0]}/>
          </div>
-          )})}
-
-          {sections[1].map((value) => {  
-                return (
-          <div className="hubinfospaced">
-          <HubInfoBox data={value} url={value[0]}/>
-          </div>
-           )})}
-      
-
-
-        </div>
+         <div className="hubinfospaced">
+         <CourseAdvice data={this.state.advice} url={sections[1][0][0]}/>
+         </div>
+         <div className="hubinfospaced">
+         <Interviews data={sections[1][1][1]} url={sections[1][1][0]}/>
+         </div>
+      </div>
+    </div>
       )
     }
   }
