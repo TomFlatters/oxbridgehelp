@@ -41,17 +41,20 @@ class HubCoursePage extends Component {
             }   
       readData("Uni/"+this.props.uni+"/Course/"+this.props.name)
         .then((dataSnapshot) => {
-          var advice = []
+          var advice = [[],[]]
           for (var i in dataSnapshot["CourseAdvice"]){
-            advice.push(dataSnapshot["CourseAdvice"][i].text)
+            advice[0].push(dataSnapshot["CourseAdvice"][i].text)
+          }
+          for (var i in dataSnapshot["Interviews"]){
+            advice[1].push(dataSnapshot["Interviews"][i].Advice)
           }
           console.log("!!!COURSE ADVICE: ")
           console.log(advice)
             this.setState({ 
               data: dataSnapshot,
               related: dataSnapshot["RelatedSubjects"],
-              interviews: dataSnapshot["Interviews"],
-              advice: advice
+              interviews: advice[1],
+              advice: advice[0]
             });
          });
   }

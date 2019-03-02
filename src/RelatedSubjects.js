@@ -11,7 +11,7 @@ class RelatedSubjects extends Component {
       console.log(typeof data);
 
       return(
-          <div>
+          <div id="Related Subjects">
         
       <Collapsible className="hubinfobox" closedClassName="hubinfobox" openedClassName="hubinfobox" trigger={this.props.url} triggerClassName="fullheight"triggerOpenedClassName="fullheight">
 

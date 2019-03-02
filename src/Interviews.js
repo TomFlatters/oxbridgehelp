@@ -6,14 +6,25 @@ import Collapsible from 'react-collapsible';
 class Interviews extends Component {
 
     render(){
-      console.log("Interviews data for collapsible:"+ this.props.data)
+      var data = this.props.data
+
+      console.log("Interviews data for collapsible:"+ data)
       return(
-          <div>
+          <div id="Interviews">
         
       <Collapsible className="hubinfobox" closedClassName="hubinfobox" openedClassName="hubinfobox" trigger={this.props.url} triggerClassName="fullheight"triggerOpenedClassName="fullheight">
 
       <div className="collapsiblerow">
         <div className="displaydata">
+
+        {data ? (
+          data.map((value) => {
+          return(<div>{value}</div>)
+        })
+        )
+        : (<div>No data available!</div>)
+        }
+
         </div>
         <div className="datanav">
           

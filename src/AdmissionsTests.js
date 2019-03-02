@@ -8,7 +8,7 @@ class AdmissionsTests extends Component {
     render(){
       console.log("AdmissionsTests data for collapsible:"+ this.props.data)
       return(
-          <div>
+          <div id="Admissions Tests">
         
       <Collapsible className="hubinfobox" closedClassName="hubinfobox" openedClassName="hubinfobox" trigger={this.props.url} triggerClassName="fullheight"triggerOpenedClassName="fullheight">
 

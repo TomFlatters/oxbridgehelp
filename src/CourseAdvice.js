@@ -26,7 +26,7 @@ class CourseAdvice extends Component {
       var data = this.props.data
       console.log("course advice data: " + data)
       return(
-          <div>
+          <div id="Course Advice">
         
       <Collapsible className="hubinfobox" closedClassName="hubinfobox" openedClassName="hubinfobox" trigger={this.props.url} triggerClassName="fullheight"triggerOpenedClassName="fullheight">
 
