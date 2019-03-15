@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Select from 'react-select';
-import Home from './Home'
 import {oXoptions, Camoptions} from './courselist.js'
-
-import * as firebase from 'firebase'
-
 import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 
 class Hub extends Component {
@@ -76,8 +72,10 @@ export default Hub
 class ChooseUni extends Component {
   render(){
     return(
-      <div className="chooseuni">      
+      <div className="chooseuni">
+      <div className="chooseunihead">      
         Where do you want to go?
+      </div>
       <div className="unichoice">
         <div className="unichoiceoption" onClick={() => {this.props.click("Oxford")}}>Oxford</div>
         <div className="unichoiceoption" onClick={() => {this.props.click("Cambridge")}}>Cambridge</div>
@@ -119,8 +117,10 @@ class SearchCourses extends Component {
     console.log(selectedOption.value)
     console.log(optionUrl)
     return(
-      <div>
+      <div className="chooseuni">
+      <div className="chooseunihead">
         Find courses and subjects at {this.props.uni}:
+      </div>
           {/* <div className="hubsearchbar"> */}
           <Select
         value={selectedOption}
