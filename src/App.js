@@ -11,7 +11,7 @@ import HubCoursePage from './HubCoursePage'
 
 import {oXoptions, Camoptions} from './courselist'
 
-class App extends Component {  
+class App extends Component {
   
 
   render() {
@@ -26,20 +26,20 @@ class App extends Component {
             <Route exact path="/the-hub" component={Hub} />
             {/* <Route path="/sites" component={Sites} /> */}
 
-            {oXoptions.map((value) => {  
-              var url = "/the-hub/" + "Oxford/" + value.value   
-              // Return the element  
+            {oXoptions.map((value) => {
+              var url = "/the-hub/" + "Oxford/" + value.value
+              // Return the element
               return (<Route exact path={url} component={() => (
               <HubCoursePage uni="Oxford" value={value.value} name={value.label}/>
-              )} />) 
+              )} />)
             })}
 
-            {Camoptions.map((value) => {  
+            {Camoptions.map((value) => {
               var url = "/the-hub/" + "Cambridge/" + value.value
               // Return the element
               return (<Route exact path={url} component={() => (
               <HubCoursePage uni="Cambridge" value={value.value} name={value.label}/>
-              )} />) 
+              )} />)
             })}
 
         </div>
@@ -50,6 +50,6 @@ class App extends Component {
 
     );
   }
-} 
+}
 
 export default App;

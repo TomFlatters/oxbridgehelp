@@ -15,7 +15,7 @@ class Main extends Component {
           <div className="shrinkbutton">
           <Link to="/why-apply">
           <div className="findouthow">
-              Find out how.
+              Find out how
             </div>
             </Link>
             </div>

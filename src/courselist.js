@@ -81,6 +81,9 @@ const cambridgeCourses = [
 	{name: "Veterinary Medicine"},
 ];
 
+// For both Camoptions and oXoptions:
+//   array of {value: a, label: b} where a is what is used in link targets, and b is the string displayed to user
+
 export const Camoptions = [];
 for (var i=0; i< cambridgeCourses.length; i++){
   const value = cambridgeCourses[i]["name"];

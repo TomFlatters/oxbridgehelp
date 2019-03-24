@@ -16,9 +16,9 @@ render(){
     return(
         <div className="header">
            <div className="header-title">
-             <Link 
+             <Link
               style={{ textDecoration: 'none',
-              color: "black" }} 
+              color: "black" }}
                to="/">
                    OxbridgeHelp
                </Link>
@@ -39,16 +39,16 @@ const LinkTo = (props) => {
     return(
 
         <Link style={{ textDecoration: 'none',
-        color: "#625f5e" }} 
+        color: "#625f5e" }}
         to={props.link}
        >
 
         <div className="header-div">
-        {props.check === props.link ? 
+        {props.check === props.link ?
             (<div id="selected-header">
                 {props.name}
-             </div>) 
-             : 
+             </div>)
+             :
              (<div>
                 {props.name}
               </div>)
