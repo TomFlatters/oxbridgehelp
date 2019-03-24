@@ -43,15 +43,15 @@ render(){
 
         <div className="hubsearchcontainer">
         <div className="hubsearchposition">
-        {!this.state.selected ? 
+        {!this.state.selected ?
             (
               <ChooseUni click={this.uniChoice}/>
-            ) 
-             : 
+            )
+             :
             (
               <SearchCourses uni={this.state.chosen} click={this.courseChoice}/>
             )
-        } 
+        }
         </div>
         </div>
         </div>
@@ -73,7 +73,7 @@ class ChooseUni extends Component {
   render(){
     return(
       <div className="chooseuni">
-      <div className="chooseunihead">      
+      <div className="chooseunihead">
         Where do you want to go?
       </div>
       <div className="unichoice">
