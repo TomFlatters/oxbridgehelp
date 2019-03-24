@@ -1,26 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import Slider from 'react-slick';
 
-import Collapsible from 'react-collapsible';
+import "../node_modules/slick-carousel/slick/slick.css";
+import "../node_modules/slick-carousel/slick/slick-theme.css";
 
 class CourseAdvice extends Component {
-  // constructor(){
-  //   super()
-  //   this.returnData = this.returnData.bind(this);
-  // }
-
-    // returnData() {
-    //  var data = this.props.data
-    //  if(data){
-    //   data.forEach(element => {
-    //     console.log("element: " + element)
-    //     return({element})
-    //   })
-    // }
-    // else{
-    //   return (<div>No responses available!</div>)
-    // }
-    // }
 
     render(){
       var data = this.props.data
@@ -28,10 +13,10 @@ class CourseAdvice extends Component {
       return(
           <div id="Course Advice">
         
-      <Collapsible className="hubinfobox" closedClassName="hubinfobox" openedClassName="hubinfobox" trigger={this.props.url} triggerClassName="fullheight"triggerOpenedClassName="fullheight">
-
-      <div className="collapsiblerow">
-        <div className="displaydata">
+      <div className="hubinfobox">
+      Course Advice:
+      <Slider>
+        <div className="fullwidth">
         {data ? (
           data.map((value) => {
           return(<div>{value}</div>)
@@ -40,12 +25,9 @@ class CourseAdvice extends Component {
         : (<div>No data available!</div>)
         }
         </div>
-        <div className="datanav">
-        </div>
+      </Slider>
       </div>
-       
-      </Collapsible>
-          
+            
         </div>
       )
     }

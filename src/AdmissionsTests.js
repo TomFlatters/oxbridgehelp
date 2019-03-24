@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+import Slider from 'react-slick';
 
-import Collapsible from 'react-collapsible';
+import "../node_modules/slick-carousel/slick/slick.css";
+import "../node_modules/slick-carousel/slick/slick-theme.css";
+
 
 class AdmissionsTests extends Component {
 
@@ -9,22 +12,19 @@ class AdmissionsTests extends Component {
       console.log("AdmissionsTests data for collapsible:"+ this.props.data)
       return(
           <div id="Admissions Tests">
-        
-      <Collapsible className="hubinfobox" closedClassName="hubinfobox" openedClassName="hubinfobox" trigger={this.props.url} triggerClassName="fullheight"triggerOpenedClassName="fullheight">
-
-      <div className="collapsiblerow">
-        <div className="displaydata">
+               
+               
+            <div className="hubinfobox">
+            Admissions Tests:
+        <Slider>
+          <div className="fullwidth">
           {this.props.data}
-        </div>
-        <div className="datanav">
-          
+          </div>
+        </Slider>
 
-        </div>
-      </div>
-       
-      </Collapsible>
-          
-        </div>
+           </div>
+
+      </div>          
       )
     }
   }
