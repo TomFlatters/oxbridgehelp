@@ -14,6 +14,7 @@ render(){
         var urlCheck = window.location.href.substr(window.location.href.lastIndexOf('/'));
     }
     return(
+        <div>
         <div className="header">
            <div className="header-title">
              <Link
@@ -27,6 +28,22 @@ render(){
            <LinkTo check={urlCheck} name="How do I apply?" link="/how-to-apply"/>
             <Link to="/the-hub"><div className="thehubheader header-div" alt="TheHub"></div></Link>
            {/* <LinkTo check={urlCheck} name="The Hub" link="/the-hub"/> */}
+        </div>
+
+        <div className="header-mob">
+            <div className="header-title">
+             <Link 
+              style={{ textDecoration: 'none',
+              color: "black" }} 
+               to="/">
+                   OxbridgeHelp
+               </Link>
+            </div>
+
+            <Link to="/the-hub"><div className="thehubheader header-div" alt="TheHub"></div></Link>
+        </div>
+        
+
         </div>
     )
 }
