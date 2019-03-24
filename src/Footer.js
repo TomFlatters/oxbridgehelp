@@ -30,28 +30,3 @@ render(){
 }
 
 export default Footer;
-
-const LinkTo = (props) => {
-    return(
-
-        <Link style={{ textDecoration: 'none',
-        color: "#625f5e" }} 
-        to={props.link}
-       >
-
-        <div className="header-div">
-        {props.check === props.link ? 
-            (<div id="selected-header">
-                {props.name}
-             </div>) 
-             : 
-             (<div>
-                {props.name}
-              </div>)
-        }
-        
-        </div>
-
-        </Link>
-    )
-}
